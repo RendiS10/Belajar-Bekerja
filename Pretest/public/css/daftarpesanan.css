@@ -1,0 +1,101 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  padding-top: 60px; /* Tambahkan padding agar konten tidak tertutup header */
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth; /* Tambahkan efek scroll halus */
+  overflow-x: hidden; /* Mencegah scroll horizontal */
+}
+header {
+  height: 40px; /* Tinggi header */
+  position: fixed; /* Membuat header tetap di posisi atas */
+  top: 0;
+  left: 0;
+  width: 100%; /* Pastikan header memenuhi lebar layar */
+  background-color: #333; /* Warna latar belakang */
+  color: white;
+  padding: 10px 0;
+  z-index: 1000; /* Pastikan header berada di atas elemen lain */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan untuk efek */
+}
+header .logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+nav ul li {
+  margin-right: 20px;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+nav ul li a:hover {
+  text-decoration: underline;
+  color: orange;
+  transition: color 0.3s ease;
+}
+
+#daftar-pesanan {
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+#daftar-pesanan h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.tabel-pesanan {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.tabel-pesanan thead {
+  background-color: #ff6600;
+  color: white;
+}
+
+.tabel-pesanan th,
+.tabel-pesanan td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabel-pesanan tr:hover {
+  background-color: #f2f2f2;
+}
+
+.tabel-pesanan td {
+  color: #444;
+  font-size: 15px;
+}
+
+.tabel-pesanan th {
+  font-weight: bold;
+  text-transform: uppercase;
+}
