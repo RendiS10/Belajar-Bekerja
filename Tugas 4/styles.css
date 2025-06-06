@@ -1,11 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 body {
   font-family: "Poppins", "Segoe UI", Arial, sans-serif;
-  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
   background-color: #f4f4f4;
   margin: 0px;
   padding: 0px;
   display: flex;
   flex-direction: column;
+  scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
+  transition: scroll-behavior 0.5s;
 }
 
 header {
