@@ -10,6 +10,16 @@
     <header>
       <h1>WELCOME TO MY WEBSITE</h1>
     </header>
+    <!-- Sidebar Logo to Top -->
+    <a
+      href="#"
+      onclick="window.scrollTo({top:0,behavior:'smooth'});return false;"
+      class="sidebar-logo"
+      title="Kembali ke Atas"
+    >
+      <span style="font-size: 1.5rem; margin-right: 4px">⬆️</span>
+      <span style="font-size: 1rem"></span>
+    </a>
     <nav>
       <ul>
         <li>
@@ -139,5 +149,30 @@
     <footer>
       <p>&copy; 2023 Rendi Sutendi Blog</p>
     </footer>
+    <style>
+      .sidebar-logo {
+        position: fixed;
+        left: 24px;
+        bottom: 32px;
+        background: #3674b5;
+        color: #fff;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+        z-index: 2000;
+        transition: background 0.2s;
+        text-decoration: none;
+      }
+      .sidebar-logo:hover {
+        background: #274a7d;
+        color: #fff;
+      }
+    </style>
   </body>
 </html>
