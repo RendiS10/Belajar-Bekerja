@@ -299,9 +299,6 @@ main {
   min-height: 100vh;
   background: linear-gradient(135deg, #f9fafc 70%, #e6f0ff 100%);
   padding: 48px 0 32px 0;
-  box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.74);
-  -webkit-box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.74);
-  -moz-box-shadow: 0px 0px 15px 4px rgba(0, 0, 0, 0.74);
 }
 .about img {
   width: 180px;
@@ -330,17 +327,22 @@ main {
 
 /* Section Skills */
 .skills {
+  gap: 1.5rem;
   height: 300px;
-  background-color: #e6f0ff; /* biru pastel muda */
+  background: linear-gradient(135deg, #f9fafc 70%, #e6f0ff 100%);
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
 }
 .skills h2 {
-  color: #3674b5;
-  font-weight: bold;
+  color: #df5f15;
+  font-weight: 700;
   text-align: center;
+  font-size: 1.5rem;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
 }
 .skills ul {
   list-style: none;
@@ -348,14 +350,11 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 }
 .skills li {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 10px 20px;
+  padding: 0px 50px 0px 50px;
   margin: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .skills li:hover {
   background-color: #e8f9ff;
