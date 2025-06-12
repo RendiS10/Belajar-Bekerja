@@ -99,6 +99,103 @@ nav {
   -moz-box-shadow: 0px 6px 9px -2px rgba(0, 0, 0, 0.74);
   top: 0;
   z-index: 1000;
+  align-items: center;
+}
+
+/* Hamburger styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1200;
+}
+.hamburger .bar {
+  width: 28px;
+  height: 4px;
+  background: #df5f15;
+  margin: 3px 0;
+  border-radius: 2px;
+  transition: 0.4s;
+}
+
+/* Hamburger open animation (optional) */
+nav.nav-open .hamburger .bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+nav.nav-open .hamburger .bar:nth-child(2) {
+  opacity: 0;
+}
+nav.nav-open .hamburger .bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Responsive Navbar */
+@media (max-width: 720px) {
+  nav {
+    display: grid;
+    grid-template-columns: 1fr 2fr 3fr;
+    padding: 0px 30px 0px 30px;
+  }
+  .nav-list {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 220px;
+    height: 100vh;
+    background: #020828;
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.15);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 80px;
+    transition: left 0.3s cubic-bezier(0.4, 2.08, 0.55, 0.44);
+    z-index: 1100;
+    display: flex;
+  }
+  .nav-list ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+  }
+  .nav-list ul li {
+    width: 100%;
+  }
+  .nav-list ul li a {
+    display: block;
+    width: 100%;
+    padding: 1rem 2rem;
+    color: #df5f15;
+    border-radius: 0;
+    border-bottom: 1px solid #222;
+    background: none;
+    text-align: left;
+  }
+  .nav-list ul li a:hover {
+    background: #222;
+    color: #b2c6d5;
+  }
+  .nav-list.open {
+    left: 0;
+  }
+  .hamburger {
+    display: flex;
+    order: -1;
+    margin-right: auto;
+  }
+  .nav-user-profile {
+    flex-direction: row;
+    justify-content: end;
+  }
+  nav .logo {
+    display: flex;
+    justify-content: start;
+  }
 }
 nav .logo {
   display: grid;
@@ -219,24 +316,16 @@ main {
   color: #df5f15;
   font-weight: 700;
   text-align: center;
-  font-size: 2.2rem;
+  font-size: 1.5rem;
   margin-top: 24px;
   margin-bottom: 12px;
   letter-spacing: 1px;
 }
 .about p {
-  text-align: justify;
-  text-indent: 2em;
-  max-width: 900px;
   margin: 24px auto 0 auto;
-  color: #222;
   font-size: 1.08rem;
   line-height: 1.8;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 12px;
   padding: 24px 32px;
-  box-shadow: 0 2px 12px 0 rgba(54, 116, 181, 0.06);
-  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
 }
 
 /* Section Skills */

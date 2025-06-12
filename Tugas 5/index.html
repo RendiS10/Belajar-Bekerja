@@ -6,6 +6,7 @@
     <title>Rendi Sutendi Blog</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script defer src="navbar.js"></script>
   </head>
   <body>
     <header>
@@ -49,6 +50,15 @@
           />
         </a>
       </div>
+      <button
+        class="hamburger"
+        aria-label="Open navigation"
+        aria-expanded="false"
+      >
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
       <div class="nav-list">
         <ul>
           <li>
@@ -91,7 +101,9 @@
             height="200"
           />
         </a>
-        <p>
+        <p
+          class="text-justify indent-8 max-w-2xl mx-auto text-gray-800 text-base leading-relaxed bg-white/80 rounded-xl p-6 shadow-md font-sans"
+        >
           Saya Mahasiswa Jurusan Teknik Informatika Semester 8 di STMIK Mardira
           Indonesia dengan minat yang kuat dan mendalam dalam pengembangan web,
           khususnya pada bagian Front-End Developer. Selama studi saya telah
