@@ -59,4 +59,7 @@
     display: flex;
     justify-content: start;
   }
+  .projects {
+    margin-top: 50px;
+  }
 }
