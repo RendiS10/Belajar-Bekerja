@@ -15,6 +15,9 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 70px;
   transition: scroll-behavior 0.5s;
+  -webkit-transition: scroll-behavior 0.5s;
+  -moz-transition: scroll-behavior 0.5s;
+  -o-transition: scroll-behavior 0.5s;
 }
 /* Header */
 header {
@@ -32,6 +35,10 @@ header .hero {
   height: 100%;
   color: #fff;
   text-align: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
 }
 header .hero h1 {
   font-size: 3rem;
@@ -41,7 +48,11 @@ header .hero h1 {
 
 .learn-more {
   display: inline-flex;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   font-size: 1.2rem;
   color: #fff;
   padding: 0.75rem 2rem;
@@ -52,14 +63,24 @@ header .hero h1 {
   position: relative;
   overflow: hidden;
   transition: background 0.3s;
+  -webkit-transition: background 0.3s;
+  -moz-transition: background 0.3s;
+  -o-transition: background 0.3s;
   cursor: pointer;
 }
 
 /* Wrapper for double arrow */
 .arrow-down-wrapper {
   display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
   flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   margin-left: 8px;
 }
 .arrow-down {
@@ -69,22 +90,45 @@ header .hero h1 {
   border-left: 2.5px solid #fff;
   border-bottom: 2.5px solid #fff;
   transform: rotate(-45deg);
-  animation: arrow-down-anim 1s infinite;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  animation: arrow-bounce 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+  -webkit-animation: arrow-bounce 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55)
+    infinite;
 }
 .arrow-down.second {
   margin-top: 2px;
   opacity: 0.7;
-  animation-delay: 0.2s;
+  animation-delay: 0.3s;
+  -webkit-animation-delay: 0.3s;
 }
 @keyframes arrow-down-anim {
+}
+
+@keyframes arrow-bounce {
   0% {
     transform: translateY(0) rotate(-45deg);
+    -webkit-transform: translateY(0) rotate(-45deg);
+    -ms-transform: translateY(0) rotate(-45deg);
+    opacity: 1;
   }
-  50% {
-    transform: translateY(7px) rotate(-45deg);
+  30% {
+    transform: translateY(10px) scale(1.15) rotate(-45deg);
+    -webkit-transform: translateY(10px) scale(1.15) rotate(-45deg);
+    -ms-transform: translateY(10px) scale(1.15) rotate(-45deg);
+    opacity: 0.85;
+  }
+  60% {
+    transform: translateY(4px) scale(0.95) rotate(-45deg);
+    -webkit-transform: translateY(4px) scale(0.95) rotate(-45deg);
+    -ms-transform: translateY(4px) scale(0.95) rotate(-45deg);
+    opacity: 1;
   }
   100% {
     transform: translateY(0) rotate(-45deg);
+    -webkit-transform: translateY(0) rotate(-45deg);
+    -ms-transform: translateY(0) rotate(-45deg);
+    opacity: 1;
   }
 }
 /* Navigation */
@@ -92,7 +136,9 @@ nav {
   position: sticky;
   background: #020828;
   display: grid;
+  display: -ms-grid;
   grid-template-columns: 1fr 2fr 1fr;
+  -ms-grid-columns: 1fr 2fr 1fr;
   height: 60px;
   box-shadow: 0px 6px 9px -2px rgba(0, 0, 0, 0.74);
   -webkit-box-shadow: 0px 6px 9px -2px rgba(0, 0, 0, 0.74);
@@ -100,6 +146,8 @@ nav {
   top: 0;
   z-index: 1000;
   align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
 }
 
 /* Hamburger styles */
@@ -371,90 +419,36 @@ main {
 }
 /* Section Projects */
 .projects {
-  height: 300px;
-  background-color: #f5eaff; /* ungu pastel sangat muda */
+  gap: 1.5rem;
+  background: linear-gradient(135deg, #f9fafc 70%, #e6f0ff 100%);
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
 .projects h2 {
-  color: #3674b5;
-  font-weight: bold;
+  color: #df5f15;
+  font-weight: 700;
   text-align: center;
-}
-.projects ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.projects li {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 10px 20px;
-  margin: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-.projects li:hover {
-  background-color: #e8f9ff;
-  transition: background-color 0.3s;
-}
-.projects li a {
-  text-decoration: none;
-  color: #3674b5;
-  font-weight: bold;
-}
-.projects li a:hover {
-  color: #b2c6d5;
-  transition: color 0.3s;
-}
-
-/* Section Contact */
-.contact {
-  padding: 0px;
-  background-color: #fffbe7; /* kuning pastel sangat muda */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  font-size: 1.5rem;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
 }
 .contact h2 {
-  color: #3674b5;
-  font-weight: bold;
+  color: #df5f15;
+  font-weight: 700;
   text-align: center;
-}
-.contact form {
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-}
-.contact form input,
-.contact form textarea {
-  padding: 10px;
-  margin: 5px 0;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-.contact form button {
-  padding: 10px;
-  background-color: #3674b5;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.contact form button:hover {
-  background-color: #b2c6d5;
-  transition: background-color 0.3s;
+  font-size: 1.5rem;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
 }
 footer {
   background-color: #fbfbfb;
   text-align: center;
   padding: 20px;
-  color: #3674b5;
+  color: #df5f15;
   font-weight: bold;
   position: relative;
   bottom: 0;
@@ -464,33 +458,10 @@ footer p {
   margin: 0;
 }
 footer a {
-  color: #3674b5;
+  color: #df5f15;
   text-decoration: none;
 }
 footer a:hover {
   color: #fbfbfb;
   transition: color 0.3s;
-}
-.sidebar-logo {
-  position: fixed;
-  left: 24px;
-  bottom: 32px;
-  background: #3674b5;
-  color: #fff;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  cursor: pointer;
-  z-index: 2000;
-  transition: background 0.2s;
-  text-decoration: none;
-}
-.sidebar-logo:hover {
-  background: #274a7d;
-  color: #fff;
 }
