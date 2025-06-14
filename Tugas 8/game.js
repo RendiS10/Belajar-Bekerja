@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!historyArea) return;
     let filtered = history;
     if (filter !== "Semua") {
-      filtered = history.filter(item => item.result === filter);
+      filtered = history.filter((item) => item.result === filter);
     }
     if (filtered.length === 0) {
       historyArea.innerHTML = `<div class=\"text-center text-muted\"><i class='fa fa-info-circle me-1'></i>Belum ada riwayat permainan.</div>`;
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let html = `<div class='table-responsive'><table class=\"table table-bordered table-sm mt-2 align-middle\"><thead class='table-light'><tr><th>#</th><th><i class='fa fa-user'></i> Anda</th><th><i class='fa fa-desktop'></i> Komputer</th><th><i class='fa fa-flag-checkered'></i> Hasil</th></tr></thead><tbody>`;
     filtered.forEach((item, idx) => {
       // Highlight baris terakhir jika filter semua dan ini data terbaru
-      const isLast = (filter === "Semua" && idx === filtered.length - 1);
+      const isLast = filter === "Semua" && idx === filtered.length - 1;
       html += `<tr class='${isLast ? "history-row-new" : ""}'>`;
       html += `<td>${idx + 1}</td>`;
       html += `<td>${iconFor(item.user)} ${item.user}</td>`;
@@ -44,17 +44,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Fungsi untuk menampilkan ikon sesuai pilihan
   function iconFor(pilihan) {
-    if (pilihan === "Kertas") return "<i class='fa-regular fa-file-lines text-success'></i>";
-    if (pilihan === "Gunting") return "<i class='fa-solid fa-scissors text-danger'></i>";
-    if (pilihan === "Batu") return "<i class='fa-solid fa-gem text-secondary'></i>";
+    if (pilihan === "Kertas")
+      return "<i class='fa-regular fa-file-lines text-success'></i>";
+    if (pilihan === "Gunting")
+      return "<i class='fa-solid fa-scissors text-danger'></i>";
+    if (pilihan === "Batu")
+      return "<i class='fa-solid fa-gem text-secondary'></i>";
     return "";
   }
 
   // Fungsi untuk badge hasil
   function badgeForResult(result) {
-    if (result === "Selamat, Anda Menang!") return "<span class='badge bg-success'><i class='fa fa-trophy me-1'></i>Menang</span>";
-    if (result === "Komputer Menang!") return "<span class='badge bg-danger'><i class='fa fa-times-circle me-1'></i>Kalah</span>";
-    if (result === "Seri!") return "<span class='badge bg-secondary'><i class='fa fa-equals me-1'></i>Seri</span>";
+    if (result === "Selamat, Anda Menang!")
+      return "<span class='badge bg-success'><i class='fa fa-trophy me-1'></i>Menang</span>";
+    if (result === "Komputer Menang!")
+      return "<span class='badge bg-danger'><i class='fa fa-times-circle me-1'></i>Kalah</span>";
+    if (result === "Seri!")
+      return "<span class='badge bg-secondary'><i class='fa fa-equals me-1'></i>Seri</span>";
     return result;
   }
 
@@ -103,10 +109,16 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   // Event untuk hapus riwayat
   document.addEventListener("click", function (e) {
-    if (e.target && (e.target.id === "clearHistoryBtn" || (e.target.closest && e.target.closest('#clearHistoryBtn')))) {
+    if (
+      e.target &&
+      (e.target.id === "clearHistoryBtn" ||
+        (e.target.closest && e.target.closest("#clearHistoryBtn")))
+    ) {
       if (confirm("Yakin ingin menghapus semua riwayat permainan?")) {
         history.length = 0;
-        renderHistory(document.getElementById("filterHistory")?.value || "Semua");
+        renderHistory(
+          document.getElementById("filterHistory")?.value || "Semua"
+        );
       }
     }
   });
