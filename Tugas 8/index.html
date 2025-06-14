@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <!-- Font Awesome CDN (jsDelivr) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Game Kertas Gunting Batu</title>
+  </head>
+  <body>
+    <header>
+      <div class="hero">
+        <h1>Permainan Kertas Gunting Batu</h1>
+        <p>By Rendi Sutendi</p>
+        <!-- learn More -->
+        <a
+          href="#syarat"
+          class="learn-more"
+          onclick="window.scrollTo({top:document.getElementById('syarat').offsetTop,behavior:'smooth'});return false;"
+        >
+          <span
+            style="display: flex; flex-direction: column; align-items: center"
+          >
+            <!-- Custom SVG Arrow Down (vertical, not diagonal) -->
+            <svg
+              class="custom-arrow-down"
+              width="32"
+              height="38"
+              viewBox="0 0 32 38"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              style="animation: arrow-bounce 1.2s infinite"
+            >
+              <line
+                x1="16"
+                y1="6"
+                x2="16"
+                y2="28"
+                stroke="white"
+                stroke-width="3.5"
+                stroke-linecap="round"
+              />
+              <polyline
+                points="8,22 16,30 24,22"
+                fill="none"
+                stroke="white"
+                stroke-width="3.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span
+              style="
+                font-size: 0.95rem;
+                color: #fff;
+                margin-top: 0.2rem;
+                letter-spacing: 1px;
+              "
+              >Scroll</span
+            >
+          </span>
+        </a>
+      </div>
+    </header>
+    <!-- Bootstrap Navbar Start -->
+    <!-- Bootstrap JS Bundle CDN (for interactive components) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoA6DQD1Cj6k2PzYf3CkBxCAp5hYkG6G20E6DkG3e1j6N8I"
+      crossorigin="anonymous"
+    ></script>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Kertas Gunting Batu</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNavbar"
+          aria-controls="mainNavbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#syarat">Syarat Permainan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#cara">Cara Bermain</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#mulai">Mulai Bermain</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <!-- Section Syarat Permainan (Interaktif) -->
+      <section id="syarat" class="py-5 bg-light">
+        <div class="container">
+          <div class="row justify-content-center align-items-center g-4">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+              <div class="card shadow-sm border-0 h-100">
+                <div class="card-body">
+                  <h5 class="card-title text-center mb-4 text-primary">
+                    Syarat Permainan
+                  </h5>
+                  <ul class="list-group list-group-flush mb-3">
+                    <li class="list-group-item">
+                      <div class="d-flex align-items-center mb-2">
+                        <img
+                          src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png"
+                          alt="Rules"
+                          width="28"
+                          class="me-3"
+                        />
+                        <i class="fa-regular fa-file-lines me-3" style="font-size:28px;"></i>
+                        <span
+                          >Hasil permainan ditentukan berdasarkan aturan:</span
+                        >
+                      </div>
+                      <div
+                        class="d-flex flex-wrap gap-3 justify-content-center"
+                      >
+                        <div class="text-center">
+                          <span class="badge bg-success me-2"><i class="fa-regular fa-file-lines"></i> Kertas</span>
+                          <span class="mx-1">vs</span>
+                          <span class="badge bg-secondary"><i class="fa-solid fa-gem"></i> Batu</span>
+                          <br />
+                          <span class="text-success small">Kertas menang</span>
+                        </div>
+                        <div class="text-center">
+                          <span class="badge bg-secondary me-2"><i class="fa-solid fa-gem"></i> Batu</span>
+                          <span class="mx-1">vs</span>
+                          <span class="badge bg-danger"><i class="fa-solid fa-scissors"></i> Gunting</span>
+                          <br />
+                          <span class="text-secondary small">Batu menang</span>
+                        </div>
+                        <div class="text-center">
+                          <span class="badge bg-danger me-2"><i class="fa-solid fa-scissors"></i> Gunting</span>
+                          <span class="mx-1">vs</span>
+                          <span class="badge bg-success"><i class="fa-regular fa-file-lines"></i> Kertas</span>
+                          <br />
+                          <span class="text-danger small">Gunting menang</span>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item d-flex align-items-center">
+                      <i class="fa-solid fa-equals me-3" style="font-size:28px;"></i>
+                      Jika kedua pemain memilih pilihan yang sama, maka hasilnya
+                      seri.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div
+              class="col-lg-6 d-flex align-items-center justify-content-center"
+            >
+            <div class="text-center">
+              <i class="fa-regular fa-file-lines mx-2 animate__animated animate__pulse animate__infinite" style="font-size:64px;"></i>
+              <i class="fa-solid fa-scissors mx-2 animate__animated animate__pulse animate__infinite animate__delay-1s" style="font-size:64px;"></i>
+              <i class="fa-solid fa-gem mx-2 animate__animated animate__pulse animate__infinite animate__delay-2s" style="font-size:64px;"></i>
+              <div class="mt-3">
+                <button class="btn btn-outline-success btn-sm me-2">
+                  Kertas
+                </button>
+                <button class="btn btn-outline-danger btn-sm me-2">
+                  Gunting
+                </button>
+                <button class="btn btn-outline-secondary btn-sm">Batu</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section Cara Bermain (Interaktif) -->
+      <section id="cara" class="py-5">
+        <div class="container">
+          <div class="row justify-content-center align-items-center g-4">
+        <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0">
+          <div class="card shadow-sm border-0 h-100">
+            <div class="card-body">
+          <h5 class="card-title text-center mb-4 text-primary">
+            Cara Bermain
+          </h5>
+          <ul class="list-group list-group-numbered mb-3">
+            <li class="list-group-item d-flex align-items-center">
+              Pilih salah satu: Kertas, Gunting, atau Batu.
+            </li>
+            <li class="list-group-item d-flex align-items-center">
+              Tekan tombol "Mainkan"
+            </li>
+            <li class="list-group-item d-flex align-items-center">
+              Lihat hasil di layar, siapa yang menang atau seri.
+            </li>
+          </ul>
+          <div class="alert alert-info text-center" role="alert">
+            <strong>Tips:</strong> Coba variasikan pilihanmu agar lawan
+            tidak bisa menebak!
+          </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-lg-6 order-lg-1 d-flex align-items-center justify-content-center"
+        >
+          <div class="text-center">
+            <i class="fa-regular fa-file-lines mx-2 animate__animated animate__pulse animate__infinite" style="font-size:64px;"></i>
+            <i class="fa-solid fa-scissors mx-2 animate__animated animate__pulse animate__infinite animate__delay-1s" style="font-size:64px;"></i>
+            <i class="fa-solid fa-gem mx-2 animate__animated animate__pulse animate__infinite animate__delay-2s" style="font-size:64px;"></i>
+            <div class="mt-3">
+          <button class="btn btn-outline-success btn-sm me-2">
+            Kertas
+          </button>
+          <button class="btn btn-outline-danger btn-sm me-2">
+            Gunting
+          </button>
+          <button class="btn btn-outline-secondary btn-sm">Batu</button>
+            </div>
+          </div>
+        </div>
+          </div>
+        </div>
+      </section>
+      <section id="mulai" class="py-5 bg-white">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+              <div class="card shadow-sm border-0">
+                <div class="card-body">
+                  <div class="text-center mb-3">
+                    <i class="fa-regular fa-file-lines mx-2 text-success" style="font-size:48px;"></i>
+                    <i class="fa-solid fa-scissors mx-2 text-danger" style="font-size:48px;"></i>
+                    <i class="fa-solid fa-gem mx-2 text-secondary" style="font-size:48px;"></i>
+                  </div>
+                  <h5 class="card-title text-center mb-4 text-primary">
+                    Mainkan Permainan!
+                  </h5>
+                  <form id="gameForm" class="mb-3">
+                    <div class="mb-3">
+                      <label for="userChoice" class="form-label fw-semibold"
+                        >Pilih:</label
+                      >
+                      <select class="form-select" id="userChoice" required>
+                        <option value="" disabled selected>
+                          Pilih salah satu
+                        </option>
+                        <option value="Kertas">Kertas</option>
+                        <option value="Gunting">Gunting</option>
+                        <option value="Batu">Batu</option>
+                      </select>
+                    </div>
+                    <div class="d-grid">
+                      <button type="submit" class="btn btn-success">
+                        Mainkan!
+                      </button>
+                    </div>
+                  </form>
+                  <div
+                    id="resultArea"
+                    class="text-center mt-4"
+                    style="display: none"
+                  >
+                    <p class="mb-1">
+                      <strong>Anda memilih:</strong> <span id="userPick"></span>
+                    </p>
+                    <p class="mb-1">
+                      <strong>Komputer memilih:</strong>
+                      <span id="computerPick"></span>
+                    </p>
+                    <div class="alert mt-3" id="gameResult"></div>
+                    <div id="playAgainArea" style="display:none;">
+                      <button type="button" class="btn btn-primary mt-3" id="playAgainBtn">
+                        Main lagi?
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Riwayat Permainan -->
+                  <div class="mt-4">
+                    <h6 class="text-primary">Riwayat Permainan</h6>
+                    <div class="mb-2 d-flex flex-wrap align-items-center gap-2">
+                      <label for="filterHistory" class="form-label mb-1 me-2">Filter hasil:</label>
+                      <select id="filterHistory" class="form-select form-select-sm" style="max-width:200px;display:inline-block;">
+                        <option value="Semua">Semua</option>
+                        <option value="Selamat, Anda Menang!">Menang</option>
+                        <option value="Komputer Menang!">Kalah</option>
+                        <option value="Seri!">Seri</option>
+                      </select>
+                      <button type="button" class="btn btn-outline-danger btn-sm ms-2" id="clearHistoryBtn" title="Hapus Riwayat">
+                        <i class="fa fa-trash"></i> Hapus Riwayat
+                      </button>
+                    </div>
+                    <div id="historyArea" class="animate__animated"></div>
+                  </div>
+                  <style>
+                  /* Animasi untuk highlight baris terakhir */
+                  .history-row-new {
+                    animation: highlightRow 1s;
+                    background: #e0ffe0 !important;
+                  }
+                  @keyframes highlightRow {
+                    0% { background: #fffbe0; }
+                    100% { background: #e0ffe0; }
+                  }
+                  /* Responsive table */
+                  #historyArea table { font-size: 0.95rem; }
+                  #historyArea th, #historyArea td { vertical-align: middle; }
+                  </style>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script src="game.js"></script>
+      </section>
+      <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-12">
+              <span>&copy; 2025 Rendi Sutendi | Game Kertas Gunting Batu</span>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

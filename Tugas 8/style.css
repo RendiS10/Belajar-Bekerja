@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+/* 1. Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
+  transition: scroll-behavior 0.5s;
+  -webkit-transition: scroll-behavior 0.5s;
+  -moz-transition: scroll-behavior 0.5s;
+  -o-transition: scroll-behavior 0.5s;
+}
+
+/* 2. Navbar */
+.navbar .navbar-nav .nav-item {
+  margin-right: 1rem;
+}
+.navbar .navbar-nav .nav-item:last-child {
+  margin-right: 0;
+}
+.navbar .navbar-nav .nav-link,
+.navbar .navbar-brand {
+  color: #00ceff !important;
+  font-weight: bold;
+}
+.navbar .navbar-nav .nav-link.active,
+.navbar .navbar-nav .nav-link:focus,
+.navbar .navbar-nav .nav-link:hover {
+  color: #fff !important;
+  text-shadow: 0 0 2px #fff3;
+}
+
+/* 3. Headings & Text Color */
+h2,
+h5,
+.text-primary,
+.card-title.text-primary,
+h2.text-primary,
+.card-title.text-center.text-primary {
+  color: #00ceff !important;
+}
+
+/* 4. Header */
+header {
+  height: 100vh;
+  background-image: url(public/hero.png);
+  background-size: cover;
+  background-position: center;
+}
+header .hero {
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #00ceff;
+  text-align: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+}
+header .hero h1 {
+  font-size: 3rem;
+  margin: 0;
+  font-weight: bold;
+}
+
+/* 5. Learn More Button */
+.learn-more {
+  display: inline-flex;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  font-size: 1.2rem;
+  color: #ffd200;
+  padding: 0.75rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s;
+  -webkit-transition: background 0.3s;
+  -moz-transition: background 0.3s;
+  -o-transition: background 0.3s;
+  cursor: pointer;
+}
+
+/* 6. Arrow Down Animation */
+.arrow-down-wrapper {
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  margin-left: 8px;
+}
+.arrow-down {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-left: 2.5px solid #fff;
+  border-bottom: 2.5px solid #fff;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  animation: arrow-bounce 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+  -webkit-animation: arrow-bounce 1.2s cubic-bezier(0.68, -0.55, 0.27, 1.55)
+    infinite;
+}
+.arrow-down.second {
+  margin-top: 2px;
+  opacity: 0.7;
+  animation-delay: 0.3s;
+  -webkit-animation-delay: 0.3s;
+}
+@keyframes arrow-down-anim {
+}
+
+@keyframes arrow-bounce {
+  0% {
+    transform: translateY(0) rotate(-45deg);
+    -webkit-transform: translateY(0) rotate(-45deg);
+    -ms-transform: translateY(0) rotate(-45deg);
+    opacity: 1;
+  }
+  30% {
+    transform: translateY(10px) scale(1.15) rotate(-45deg);
+    -webkit-transform: translateY(10px) scale(1.15) rotate(-45deg);
+    -ms-transform: translateY(10px) scale(1.15) rotate(-45deg);
+    opacity: 0.85;
+  }
+  60% {
+    transform: translateY(4px) scale(0.95) rotate(-45deg);
+    -webkit-transform: translateY(4px) scale(0.95) rotate(-45deg);
+    -ms-transform: translateY(4px) scale(0.95) rotate(-45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) rotate(-45deg);
+    -webkit-transform: translateY(0) rotate(-45deg);
+    -ms-transform: translateY(0) rotate(-45deg);
+    opacity: 1;
+  }
+}
